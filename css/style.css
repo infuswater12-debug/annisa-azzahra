@@ -3,8 +3,6 @@
     --bg-color: #f4f4f9;
     --card-bg: #ffffff;
     --text-color: #333333;
-    --border-color: #cccccc;
-    --border-color-light: #eeeeee;
     --primary-color: #6c5ce7;
     --primary-hover: #5a4bcf;
     --danger-color: #ff7675;
@@ -17,8 +15,6 @@ body.dark-mode {
     --bg-color: #1a1a2e;
     --card-bg: #16213e;
     --text-color: #e9e9e9;
-    --border-color: #3a3a5e;
-    --border-color-light: #2a2a4e;
     --primary-color: #0f3460;
     --primary-hover: #e94560;
 }
@@ -35,7 +31,6 @@ body {
     color: var(--text-color);
     padding: 2rem;
     transition: background-color 0.3s, color 0.3s;
-    min-height: 100vh;
 }
 
 .dashboard {
@@ -50,12 +45,7 @@ body {
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-}
-
-.card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .greeting-section {
@@ -73,23 +63,12 @@ body {
     border-radius: 6px;
     background-color: var(--primary-color);
     color: white;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#theme-toggle:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-#theme-toggle:active {
-    transform: scale(0.95);
 }
 
 #time {
     font-size: 3.5rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-weight: bold;
 }
 
 .main-grid {
@@ -99,27 +78,18 @@ body {
 }
 
 @media (max-width: 768px) {
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
+    .main-grid { grid-template-columns: 1fr; }
 }
 
 /* Styling Focus Timer */
-.timer-section {
-    text-align: center;
-}
-
+.timer-section { text-align: center; }
 .timer-display {
     font-size: 4rem;
     color: var(--primary-color);
     margin: 1.5rem 0;
     font-weight: bold;
 }
-
-.timer-controls button,
-.task-input button,
-.link-input button,
-.sort-controls button {
+.timer-controls button, .task-input button, .link-input button, .sort-controls button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
@@ -127,107 +97,43 @@ body {
     color: white;
     cursor: pointer;
     margin: 0 0.2rem;
-    transition: background-color 0.2s, transform 0.1s;
-    font-weight: 500;
+    transition: 0.2s;
 }
-
-button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
-}
+button:hover { opacity: 0.8; }
 
 /* Styling Tasks */
-.task-input,
-.link-input {
+.task-input, .link-input {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
 }
-
-input[type="text"],
-input[type="url"] {
+input[type="text"], input[type="url"] {
     flex: 1;
     padding: 0.6rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: var(--card-bg);
+    background-color: var(--bg-color);
     color: var(--text-color);
-    transition: border-color 0.3s, box-shadow 0.3s;
 }
-
-input[type="text"]:focus,
-input[type="url"]:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
-}
-
-.sort-controls {
-    margin-bottom: 1rem;
-    text-align: right;
-}
-
-#task-list {
-    list-style: none;
-}
-
+.sort-controls { margin-bottom: 1rem; text-align: right; }
+#task-list { list-style: none; }
 #task-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 0;
-    border-bottom: 1px solid var(--border-color-light);
-    transition: background-color 0.2s;
+    border-bottom: 1px solid #eee;
 }
-
-#task-list li:hover {
-    background-color: rgba(108, 92, 231, 0.05);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-}
-
-.task-done {
-    text-decoration: line-through;
-    opacity: 0.6;
-    color: var(--border-color);
-}
-
+.task-done { text-decoration: line-through; opacity: 0.6; }
 .task-actions button {
     margin-left: 0.5rem;
     padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
     border-radius: 4px;
 }
-
-.btn-done {
-    background-color: var(--success-color);
-}
-
-.btn-done:hover {
-    background-color: #00a372;
-}
-
-.btn-edit {
-    background-color: #f39c12;
-}
-
-.btn-edit:hover {
-    background-color: #d68910;
-}
-
-.btn-delete {
-    background-color: var(--danger-color);
-}
-
-.btn-delete:hover {
-    background-color: #d95555;
-}
+.btn-done { background-color: var(--success-color); }
+.btn-edit { background-color: #f39c12; }
+.btn-delete { background-color: var(--danger-color); }
 
 /* Styling Links */
 .links-container {
@@ -235,7 +141,6 @@ input[type="url"]:focus {
     flex-wrap: wrap;
     gap: 0.8rem;
 }
-
 .link-item {
     background-color: var(--primary-color);
     color: white;
@@ -243,16 +148,6 @@ input[type="url"]:focus {
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;
-    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
-    font-weight: 500;
+    transition: 0.2s;
 }
-
-.link-item:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
-}
-
-.link-item:active {
-    transform: translateY(-1px);
-}
+.link-item:hover { background-color: var(--primary-hover); }
